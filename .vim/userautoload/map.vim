@@ -3,8 +3,8 @@ noremap * *N
 noremap # #N
 
 " 行移動
-" noremap j gj
-" noremap k gk
+noremap j gj
+noremap k gk
 
 " タブ
 nnoremap <silent> tn :tabnew<CR>
