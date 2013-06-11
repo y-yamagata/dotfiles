@@ -11,3 +11,6 @@ nnoremap <silent> tn :tabnew<CR>
 nnoremap <silent> gL :tabfirst<CR>
 nnoremap <silent> gl :tablast<CR>
 
+" タグ
+nnoremap <C-]> g<C-]>
+

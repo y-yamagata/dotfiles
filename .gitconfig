@@ -1,0 +1,14 @@
+[core]
+	editor = vim
+	pager = less -r
+	autocrlf = input
+[color]
+	ui = auto
+[alias]
+	co = checkout
+	ci = commit
+	st = status
+	b = branch -v
+	ll = log --oneline
+[include]
+	path = ~/.gitconfig.local
