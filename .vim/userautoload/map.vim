@@ -1,6 +1,7 @@
 " 検索関連
 noremap * *N
 noremap # #N
+noremap <Esc><Esc> :nohlsearch<CR>
 
 " 行移動
 noremap j gj
