@@ -2,6 +2,8 @@
 noremap * *N
 noremap # #N
 noremap <Esc><Esc> :nohlsearch<CR>
+noremap n nzz
+noremap N Nzz
 
 " 行移動
 noremap j gj

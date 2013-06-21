@@ -22,6 +22,7 @@ NeoBundle 'git://github.com/Shougo/vimshell.vim.git'
 NeoBundle 'git://github.com/Shougo/neocomplcache.vim.git'
 NeoBundle 'git://github.com/tomasr/molokai.git'
 NeoBundle 'git://github.com/tsukkee/unite-tag.git'
+NeoBundle 'git://github.com/scrooloose/syntastic'
 
 " vim-script
 NeoBundle 'project.tar.gz'
