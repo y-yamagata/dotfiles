@@ -21,3 +21,5 @@ set smarttab
 
 set virtualedit+=block
 
+set completeopt=menuone
+
