@@ -18,6 +18,15 @@ let g:neocomplcache_dictionary_filetype_lists = {
 " unite
 let g:unite_winheight=5
 let g:unite_enable_start_insert=1
+let g:unite_source_history_yank_enable=1
+let g:unite_source_history_yank_limit=100
+let g:unite_source_file_mru_limit=200
+nnoremap <silent> ,uy :Unite history/yank<CR>
+nnoremap <silent> ,ub :Unite buffer<CR>
+nnoremap <silent> ,uf :UniteWithBufferDir -buffer-name=files file<CR>
+nnoremap <silent> ,ur :Unite -buffer-name=register register<CR>
+nnoremap <silent> ,uu :Unite file_mru buffer<CR>
+nnoremap <silent> ,ut :Unite tab<CR>
 
 " vimshell
 let g:vimshell_prompt=$USER.'% '
