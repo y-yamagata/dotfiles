@@ -33,4 +33,5 @@ filetype plugin on
 filetype indent on
 
 runtime! userautoload/*.vim
+runtime! userautoload/options/*.vim
 
