@@ -1,0 +1,3 @@
+[submodule ".vim/userautoload/options"]
+	path = .vim/userautoload/options
+	url = git@github.com:y-yamagata/vimrc-options.git
