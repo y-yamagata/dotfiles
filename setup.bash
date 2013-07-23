@@ -4,7 +4,7 @@
 # setup.bashの場所は変更しないこと
 
 # 無視するファイルリスト
-ignore_files=". .. .git .vim setup.bash README.md"
+ignore_files=". .. .git .vim setup.bash README.md .gitmodules"
 # setup.bashとリポジトリルートが同一なことが前提
 current_path=`pwd`
 
