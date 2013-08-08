@@ -6,6 +6,7 @@ escape ^aa
 
 bind x
 bind ^x
+bindkey -k kD stuff \177
 
 startup_message off
 autodetach on
@@ -14,8 +15,6 @@ vbell off
 caption always "%{= Rk} %?%F%{b kr}%? %?%h%:%t (screen #%n)%? %{-}"
 hardstatus alwayslastline "%{= Gk} %-Lw%40L>%{b kg} %n %t %{-}%+Lw%-040=%{b km} %l %{.b} %Y/%m/%d %C:%s %A "
 shelltitle "$ |shell"
-
-bindkey -k kD stuff \177
 
 termcapinfo xterm* ti@:te@
 
