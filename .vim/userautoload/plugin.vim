@@ -37,3 +37,14 @@ nnoremap <silent> vp :VimShellPop<CR>
 let g:vimfiler_as_default_explorer=1
 let g:vimfiler_edit_action='tabopen'
 
+" vim-over
+nnoremap <silent> <Leader>m :OverCommandLine<CR>%s/
+
+" yankround.vim
+let g:yankround_max_history=50
+nmap p <Plug>(yankround-p)
+nmap P <Plug>(yankround-P)
+nmap <Space>p <Plug>(yankround-prev)
+nmap <Space>n <Plug>(yankround-next)
+nnoremap <silent> g<C-p> :<C-u>CtrlPYankRound<CR>
+

@@ -24,6 +24,9 @@ NeoBundle 'git://github.com/tomasr/molokai.git'
 NeoBundle 'git://github.com/tsukkee/unite-tag.git'
 NeoBundle 'git://github.com/scrooloose/syntastic'
 NeoBundle 'git@github.com:Shougo/vimfiler.vim.git'
+NeoBundle 'osyo-manga/vim-over'
+NeoBundle 'LeafCage/yankround.vim'
+NeoBundle 'kien/ctrlp.vim'
 
 " vim-script
 NeoBundle 'project.tar.gz'
