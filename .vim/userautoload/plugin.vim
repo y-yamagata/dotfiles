@@ -32,7 +32,7 @@ let g:vimfiler_as_default_explorer=1
 let g:vimfiler_edit_action='tabopen'
 
 " vim-over
-nnoremap <silent> <Leader>m :OverCommandLine<CR>%s/
+nnoremap <silent> ,m :OverCommandLine<CR>%s/
 
 " yankround.vim
 let g:yankround_max_history=50
