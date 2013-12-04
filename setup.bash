@@ -1,12 +1,12 @@
-#!/usr/bin/env bash
+#!/usr/bin/env bash -eu
 # setup.bashの場所は変更しないこと
 
-if ! type git > /dev/null 2>1; then
+if ! type git > /dev/null 2>&1; then
     echo "git is nothing."
     exit 1
 fi
 
-if ! type vim > /dev/null 2>1; then
+if ! type vim > /dev/null 2>&1; then
     echo "vim is nothing."
     exit 1
 fi
