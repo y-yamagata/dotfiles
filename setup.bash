@@ -50,7 +50,6 @@ ln -s $current_path/.vim/userautoload ~/.vim/userautoload
 wget -O ~/.git-completion.bash --no-check-certificate https://raw.github.com/git/git/master/contrib/completion/git-completion.bash
 wget -O ~/.git-prompt.sh --no-check-certificate https://raw.github.com/git/git/master/contrib/completion/git-prompt.sh
 cat .bashrc >> ~/.bashrc
-source ~/.bashrc
 
 git submodule init
 git submodule update
