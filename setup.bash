@@ -1,54 +1,61 @@
-#!/usr/bin/env bash -eu
-# setup.bashの場所は変更しないこと
+#!/usr/bin/env bash
 
-if ! type git > /dev/null 2>&1; then
-    echo "git is nothing."
+GIT=`which git 2> /dev/null`
+VIM=`which vim 2> /dev/null`
+WGET=`which wget 2> /dev/null`
+
+if test "-$GIT-" = "--" || test "-$VIM-" = "--" || test "-$WGET-" = "--"
+then
+    echo You must install git, vim, wget.
     exit 1
 fi
 
-if ! type vim > /dev/null 2>&1; then
-    echo "vim is nothing."
-    exit 1
-fi
+current_path=`dirname $0`
 
-if ! type wget > /dev/null 2>&1; then
-    echo "wget is nothing."
-    exit 1
-fi
+ignore_files=`cat $current_path/setup.ignore`
+target_files=`ls -1a | grep -vE "^\.+$"`
 
-ignore_files=". .. .git .vim setup.bash README.md .gitmodules .bashrc"
-
-current_path=`pwd`
-target_files=`ls -1a | tr '\n' ' '`
-for file in $target_files; do
+for file in $target_files
+do
     is_ignore=1
-    for ignore_file in $ignore_files; do
-        if [ $file = $ignore_file ]; then
-            echo "ignore $file"
-            is_ignore=0
+    target=$current_path/$file
 
+    if test -d $target
+    then
+        echo $target is directory.
+        is_ignore=0
+    fi
+
+    for ignore_file in $ignore_files
+    do
+        if test $file = $ignore_file
+        then
+            echo ignore $file
+            is_ignore=0
             break
         fi
     done
 
-    if [ $is_ignore -eq 0 ]; then
+    if test $is_ignore -eq 0
+    then
         continue
     fi
 
-    filepath="$current_path/$file"
-
-    echo "make synbolic link: $filepath -> ~/$file"
-    ln -s $filepath ~/$file
+    echo synbolic link: $target to ~/$file
+    ln -s $target ~/$file
 done
 
-git clone https://github.com/Shougo/neobundle.vim.git ~/.vim/bundle/neobundle.vim/
+exit 0
+
+git clone git://github.com/Shougo/neobundle.vim.git ~/.vim/bundle/neobundle.vim/
 vim -c "NeoBundleInstall" -c q!
 
-echo "make synbolic link: $current_path/.vim/userautoload -> ~/.vim/userautoload"
+echo make synbolic link: $current_path/.vim/userautoload to ~/.vim/userautoload
 ln -s $current_path/.vim/userautoload ~/.vim/userautoload
 
 wget -O ~/.git-completion.bash --no-check-certificate https://raw.github.com/git/git/master/contrib/completion/git-completion.bash
 wget -O ~/.git-prompt.sh --no-check-certificate https://raw.github.com/git/git/master/contrib/completion/git-prompt.sh
+
 cat .bashrc >> ~/.bashrc
 
 git submodule init

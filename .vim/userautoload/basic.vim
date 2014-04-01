@@ -3,6 +3,8 @@ set noswapfile
 
 set incsearch
 set hlsearch
+set ignorecase
+set smartcase
 
 set encoding=utf-8
 set fileencoding=utf-8
@@ -19,6 +21,7 @@ set softtabstop=4
 set shiftwidth=4
 set smarttab
 
+set backspace=indent,eol,start
 set virtualedit+=block
 
 set completeopt=menuone
