@@ -9,5 +9,5 @@ set cmdheight=2
 set showcmd
 set laststatus=2
 
-colorscheme molokai
+colorscheme desert
 

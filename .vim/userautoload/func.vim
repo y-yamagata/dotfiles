@@ -1,4 +1,3 @@
-" 全角スペース表示
 if has('syntax')
     syntax enable
     function! ActivateInvisibleIndicator()

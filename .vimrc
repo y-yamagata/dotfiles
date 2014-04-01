@@ -1,15 +1,11 @@
-set nocompatible
-
 if has('vim_starting')
     set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
 call neobundle#rc(expand('~/.vim/bundle/'))
 
-NeoBundleFetch 'Shougo/neobundle.vim'
-
-" github
-NeoBundle 'Shougo/vimproc', {
+NeoBundleFetch 'git://github.com/Shougo/neobundle.vim.git'
+NeoBundle 'git://github.com/Shougo/vimproc.git', {
     \ 'build' : {
         \ 'windows' : 'make -f make_mingw32.mak',
         \ 'cygwin' : 'make -f make_cygwin.mak',
@@ -17,25 +13,21 @@ NeoBundle 'Shougo/vimproc', {
         \ 'unix' : 'make -f make_unix.mak',
     \ },
 \ }
-NeoBundle 'git://github.com/Shougo/unite.vim.git'
-NeoBundle 'git://github.com/Shougo/vimshell.vim.git'
 NeoBundle 'git://github.com/Shougo/neocomplcache.vim.git'
+NeoBundle 'git://github.com/scrooloose/syntastic.git'
+NeoBundle 'git://github.com/osyo-manga/vim-over.git'
+NeoBundle 'git://github.com/LeafCage/yankround.vim.git'
+NeoBundle 'git://github.com/kien/ctrlp.vim.git'
+NeoBundle 'git://github.com/troydm/easybuffer.vim.git'
 NeoBundle 'git://github.com/tomasr/molokai.git'
-NeoBundle 'git://github.com/tsukkee/unite-tag.git'
-NeoBundle 'git://github.com/scrooloose/syntastic'
-NeoBundle 'git@github.com:Shougo/vimfiler.vim.git'
-NeoBundle 'osyo-manga/vim-over'
-NeoBundle 'LeafCage/yankround.vim'
-NeoBundle 'kien/ctrlp.vim'
-
-" vim-script
-NeoBundle 'project.tar.gz'
+NeoBundle 'git://github.com/w0ng/vim-hybrid.git'
+" python need
+" NeoBundle 'git://github.com/alpaca-tc/alpaca_powertabline.git'
+" NeoBundle 'git://github.com/Lokaltog/powerline.git', { 'rtp' : 'powerline/bindings/vim'}
 
 syntax on
-
 filetype plugin on
 filetype indent on
 
 runtime! userautoload/*.vim
-runtime! userautoload/options/*.vim
 

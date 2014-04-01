@@ -1,19 +1,14 @@
-" 検索関連
 noremap * *N
 noremap # #N
-noremap <Esc><Esc> :nohlsearch<CR>
 noremap n nzz
 noremap N Nzz
+noremap <silent><Esc><Esc> :nohlsearch<CR>
 
-" 行移動
 noremap j gj
 noremap k gk
 
-" タブ
-nnoremap <silent> tn :tabnew<CR>
-nnoremap <silent> gL :tabfirst<CR>
-nnoremap <silent> gl :tablast<CR>
+noremap <silent>gn :bn<CR>
+noremap <silent>gp :bp<CR>
 
-" タグ
 nnoremap <C-]> g<C-]>
 
