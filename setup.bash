@@ -45,8 +45,6 @@ do
     ln -s $target ~/$file
 done
 
-exit 0
-
 git clone git://github.com/Shougo/neobundle.vim.git ~/.vim/bundle/neobundle.vim/
 vim -c "NeoBundleInstall" -c q!
 
