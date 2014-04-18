@@ -12,3 +12,6 @@ noremap <silent>gp :bp<CR>
 
 nnoremap <C-]> g<C-]>
 
+nnoremap <silent>"" :sp<CR>
+nnoremap <silent>"% :vs<CR>
+
