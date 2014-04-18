@@ -10,7 +10,7 @@ then
     exit 1
 fi
 
-current_path=`dirname $0`
+current_path=$(cd $(dirname $0); pwd)
 
 ignore_files=`cat $current_path/setup.ignore`
 target_files=`ls -1a | grep -vE "^\.+$"`
