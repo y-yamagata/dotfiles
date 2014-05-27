@@ -56,6 +56,3 @@ wget -O ~/.git-prompt.sh --no-check-certificate https://raw.github.com/git/git/m
 
 cat .bashrc >> ~/.bashrc
 
-git submodule init
-git submodule update
-
