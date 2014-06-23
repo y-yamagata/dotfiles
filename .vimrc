@@ -23,6 +23,8 @@ NeoBundle 'git://github.com/tomasr/molokai.git'
 NeoBundle 'git://github.com/w0ng/vim-hybrid.git'
 NeoBundle 'git://github.com/Shougo/vimfiler.vim.git'
 NeoBundle 'git://github.com/Shougo/unite.vim.git'
+NeoBundle 'git://github.com/vim-scripts/Align.git'
+NeoBundle 'git://github.com/thinca/vim-quickrun.git'
 " python need
 " NeoBundle 'git://github.com/alpaca-tc/alpaca_powertabline.git'
 " NeoBundle 'git://github.com/Lokaltog/powerline.git', { 'rtp' : 'powerline/bindings/vim'}
