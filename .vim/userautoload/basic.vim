@@ -28,3 +28,8 @@ set virtualedit+=block
 
 set completeopt=menuone
 
+if executable('ag')
+    set grepprg=ag\ --nogroup\ -iS
+    set grepformat=%f:%l:%m
+endif
+
