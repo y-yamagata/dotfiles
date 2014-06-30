@@ -28,6 +28,7 @@ nnoremap <silent>eb :EasyBufferToggle<CR>
 let g:vimfiler_as_default_explorer=1
 let g:vimfiler_min_cache_files=256
 " let g:vimfiler_edit_action='tabopen'
+nnoremap <silent><BS><BS> :VimFiler<CR>
 
 " ctrlp
 command! CC :ClearAllCtrlPCaches
