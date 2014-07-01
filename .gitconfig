@@ -8,7 +8,7 @@
 	co = checkout
 	ci = commit
 	st = status
-	b = branch -v
+	b = branch -vv
 	ll = log --oneline
 [include]
 	path = ~/.gitconfig.local

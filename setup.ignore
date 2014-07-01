@@ -1,6 +1,7 @@
 README.md
 .gitmodules
 .bashrc
+.zshrc
 setup.bash
 setup.ignore
 
