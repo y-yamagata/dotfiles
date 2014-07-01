@@ -12,7 +12,7 @@ if [ ${WWW_HOME-UNDEF} = 'UNDEF' ]; then
     export WWW_HOME='google.co.jp'
 fi
 
-alias ls='ls -G'
+alias ls='ls -G --color'
 alias ll='ls -l -h'
 alias la='ls -a'
 alias l1='ls -1'
