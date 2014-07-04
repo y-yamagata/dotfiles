@@ -10,3 +10,16 @@ if has('syntax')
     augroup END
 endif
 
+function! SetTextWidth()
+    let ftype = getbufvar('%', '&filetype')
+    if (ftype ==# 'python') 
+        set textwidth=79
+    else
+        set textwidth=0
+    endif
+endfunction
+
+augroup Pep8Enviroment
+    autocmd BufEnter * call SetTextWidth()
+augroup END
+
