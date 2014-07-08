@@ -19,10 +19,10 @@ nmap <Space>n <Plug>(yankround-next)
 nnoremap <silent>g<C-p> :<C-u>CtrlPYankRound<CR>
 
 " easybuffer
-let g:easybuffer_toggle_position='HorizontalBelow'
-let g:easybuffer_horizontal_height='&lines/4'
-let g:easybuffer_sort_mode='n'
-nnoremap <silent>eb :EasyBufferToggle<CR>
+" let g:easybuffer_toggle_position='HorizontalBelow'
+" let g:easybuffer_horizontal_height='&lines/4'
+" let g:easybuffer_sort_mode='n'
+" nnoremap <silent>eb :EasyBufferToggle<CR>
 
 " vimfiler
 let g:vimfiler_as_default_explorer=1
@@ -32,4 +32,7 @@ nnoremap <silent><BS><BS> :VimFiler<CR>
 
 " ctrlp
 command! CC :ClearAllCtrlPCaches
+
+" ezbuffer
+nnoremap <silent>eb :EzBuffer<CR>
 
