@@ -13,7 +13,7 @@ fi
 current_path=$(cd $(dirname $0); pwd)
 
 ignore_files=`cat $current_path/setup.ignore`
-target_files=`ls -1a | grep -vE "^\.+$"`
+target_files=`ls -1a --color=none | grep -vE "^\.+$"`
 
 for file in $target_files
 do
