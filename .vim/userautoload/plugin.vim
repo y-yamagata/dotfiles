@@ -32,6 +32,11 @@ nnoremap <silent><BS><BS> :VimFiler<CR>
 
 " ctrlp
 command! CC :ClearAllCtrlPCaches
+let g:ctrlp_custom_ignore = {
+\ 'dir':  '\v[\/]\.(git|hg|svn)$',
+\ 'file': '\v\.(exe|so|dll|pyc)$',
+\ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
+\ }
 
 " ezbuffer
 nnoremap <silent>eb :EzBuffer<CR>
