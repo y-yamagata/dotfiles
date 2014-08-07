@@ -30,6 +30,7 @@ NeoBundle 'git://github.com/thinca/vim-quickrun.git'
 " NeoBundle 'git://github.com/Lokaltog/powerline.git', { 'rtp' : 'powerline/bindings/vim'}
 " original plugin
 NeoBundle 'git://github.com/y-yamagata/ezbuffer.vim'
+NeoBundle 'git://github.com/thinca/vim-qfreplace.git'
 
 syntax on
 filetype plugin on
