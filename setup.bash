@@ -50,6 +50,8 @@ vim -c "NeoBundleInstall" -c q!
 
 echo synbolic link: $current_path/.vim/ftplugin to ~/.vim/ftplugin
 ln -s $current_path/.vim/ftplugin ~/.vim/ftplugin
+echo synbolic link: $current_path/.vim/autoload to ~/.vim/autoload
+ln -s $current_path/.vim/autoload ~/.vim/autoload
 echo synbolic link: $current_path/.vim/userautoload to ~/.vim/userautoload
 ln -s $current_path/.vim/userautoload ~/.vim/userautoload
 
