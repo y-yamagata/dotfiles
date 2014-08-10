@@ -18,16 +18,11 @@ NeoBundle 'git://github.com/scrooloose/syntastic.git'
 NeoBundle 'git://github.com/osyo-manga/vim-over.git'
 NeoBundle 'git://github.com/LeafCage/yankround.vim.git'
 NeoBundle 'git://github.com/kien/ctrlp.vim.git'
-" NeoBundle 'git://github.com/troydm/easybuffer.vim.git'
 NeoBundle 'git://github.com/tomasr/molokai.git'
 NeoBundle 'git://github.com/Shougo/vimfiler.vim.git'
 NeoBundle 'git://github.com/Shougo/unite.vim.git'
 NeoBundle 'git://github.com/vim-scripts/Align.git'
 NeoBundle 'git://github.com/thinca/vim-quickrun.git'
-" python need
-" NeoBundle 'git://github.com/alpaca-tc/alpaca_powertabline.git'
-" NeoBundle 'git://github.com/Lokaltog/powerline.git', { 'rtp' : 'powerline/bindings/vim'}
-" original plugin
 NeoBundle 'git://github.com/y-yamagata/ezbuffer.vim'
 NeoBundle 'git://github.com/thinca/vim-qfreplace.git'
 
