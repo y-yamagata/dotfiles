@@ -48,7 +48,9 @@ done
 git clone git://github.com/Shougo/neobundle.vim.git ~/.vim/bundle/neobundle.vim/
 vim -c "NeoBundleInstall" -c q!
 
-echo make synbolic link: $current_path/.vim/userautoload to ~/.vim/userautoload
+echo synbolic link: $current_path/.vim/ftplugin to ~/.vim/ftplugin
+ln -s $current_path/.vim/ftplugin ~/.vim/ftplugin
+echo synbolic link: $current_path/.vim/userautoload to ~/.vim/userautoload
 ln -s $current_path/.vim/userautoload ~/.vim/userautoload
 
 wget -O ~/.git-completion.bash --no-check-certificate https://raw.github.com/git/git/master/contrib/completion/git-completion.bash
