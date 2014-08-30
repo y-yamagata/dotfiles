@@ -8,6 +8,7 @@ let g:neocomplcache_dictionary_filetype_lists = {
 
 " vim-over
 nnoremap <silent>,m :OverCommandLine<CR>%s/
+vnoremap <silent>,m :OverCommandLine<CR>s/
 
 " yankround.vim
 let g:yankround_max_history=50
