@@ -17,5 +17,6 @@ alias ll='ls -l -h'
 alias la='ls -a'
 alias l1='ls -1'
 alias grep='grep --color'
+alias w3m='w3m -cookie'
 # alias ctags='/opt/local/bin/ctags'
 
