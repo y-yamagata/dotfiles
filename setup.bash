@@ -45,7 +45,7 @@ do
     ln -s $target ~/$file
 done
 
-git clone git://github.com/Shougo/neobundle.vim.git ~/.vim/bundle/neobundle.vim/
+git clone git@github.com:Shougo/neobundle.vim.git ~/.vim/bundle/neobundle.vim/
 vim -c "NeoBundleInstall" -c q!
 
 echo synbolic link: $current_path/.vim/ftplugin to ~/.vim/ftplugin
@@ -58,7 +58,7 @@ ln -s $current_path/.vim/userautoload ~/.vim/userautoload
 wget -O ~/.git-completion.bash --no-check-certificate https://raw.github.com/git/git/master/contrib/completion/git-completion.bash
 wget -O ~/.git-prompt.sh --no-check-certificate https://raw.github.com/git/git/master/contrib/completion/git-prompt.sh
 
-git clone git://github.com/zsh-users/zsh-completions.git ~/.zsh-completions/
+git clone git@github.com:zsh-users/zsh-completions.git ~/.zsh-completions/
 
 cat .bashrc >> ~/.bashrc
 cat .zshrc >> ~/.zshrc

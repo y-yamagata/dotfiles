@@ -2,10 +2,10 @@ if has('vim_starting')
     set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
-call neobundle#rc(expand('~/.vim/bundle/'))
+call neobundle#begin(expand('~/.vim/bundle/'))
 
-NeoBundleFetch 'git://github.com/Shougo/neobundle.vim.git'
-NeoBundle 'git://github.com/Shougo/vimproc.git', {
+NeoBundleFetch 'git@github.com:Shougo/neobundle.vim.git'
+NeoBundle 'git@github.com:Shougo/vimproc.git', {
     \ 'build' : {
         \ 'windows' : 'make -f make_mingw32.mak',
         \ 'cygwin' : 'make -f make_cygwin.mak',
@@ -13,19 +13,21 @@ NeoBundle 'git://github.com/Shougo/vimproc.git', {
         \ 'unix' : 'make -f make_unix.mak',
     \ },
 \ }
-NeoBundle 'git://github.com/Shougo/neocomplcache.vim.git'
-NeoBundle 'git://github.com/scrooloose/syntastic.git'
-NeoBundle 'git://github.com/osyo-manga/vim-over.git'
-NeoBundle 'git://github.com/LeafCage/yankround.vim.git'
-NeoBundle 'git://github.com/kien/ctrlp.vim.git'
-NeoBundle 'git://github.com/tomasr/molokai.git'
-NeoBundle 'git://github.com/Shougo/vimfiler.vim.git'
-NeoBundle 'git://github.com/Shougo/unite.vim.git'
-NeoBundle 'git://github.com/vim-scripts/Align.git'
-NeoBundle 'git://github.com/thinca/vim-quickrun.git'
-NeoBundle 'git://github.com/y-yamagata/ezbuffer.vim'
-NeoBundle 'git://github.com/thinca/vim-qfreplace.git'
-NeoBundle 'git://github.com/kannokanno/vimtest.git'
+NeoBundle 'git@github.com:Shougo/neocomplcache.vim.git'
+NeoBundle 'git@github.com:scrooloose/syntastic.git'
+NeoBundle 'git@github.com:osyo-manga/vim-over.git'
+NeoBundle 'git@github.com:LeafCage/yankround.vim.git'
+NeoBundle 'git@github.com:kien/ctrlp.vim.git'
+NeoBundle 'git@github.com:tomasr/molokai.git'
+NeoBundle 'git@github.com:Shougo/vimfiler.vim.git'
+NeoBundle 'git@github.com:Shougo/unite.vim.git'
+NeoBundle 'git@github.com:vim-scripts/Align.git'
+NeoBundle 'git@github.com:thinca/vim-quickrun.git'
+NeoBundle 'git@github.com:y-yamagata/ezbuffer.vim'
+NeoBundle 'git@github.com:thinca/vim-qfreplace.git'
+NeoBundle 'git@github.com:kannokanno/vimtest.git'
+
+call neobundle#end()
 
 syntax on
 filetype plugin on
