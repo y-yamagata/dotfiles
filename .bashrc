@@ -20,3 +20,5 @@ alias grep='grep --color'
 alias w3m='w3m -cookie'
 # alias ctags='/opt/local/bin/ctags'
 
+# set -o vi
+
