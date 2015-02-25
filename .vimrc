@@ -26,6 +26,7 @@ NeoBundle 'git@github.com:thinca/vim-quickrun.git'
 NeoBundle 'git@github.com:y-yamagata/ezbuffer.vim'
 NeoBundle 'git@github.com:thinca/vim-qfreplace.git'
 NeoBundle 'git@github.com:kannokanno/vimtest.git'
+" NeoBundle 'git@github.com:kchmck/vim-coffee-script.git'
 
 call neobundle#end()
 
