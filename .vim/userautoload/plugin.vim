@@ -27,7 +27,7 @@ nnoremap <silent><BS><BS> :VimFiler<CR>
 command! CC :ClearAllCtrlPCaches
 let g:ctrlp_custom_ignore = {
 \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-\ 'file': '\v\.(exe|so|dll|pyc)$',
+\ 'file': '\v\.(exe|so|dll|pyc|jpg|png)$',
 \ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
 \ }
 
