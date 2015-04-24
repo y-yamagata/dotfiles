@@ -7,8 +7,8 @@ noremap <silent><Esc><Esc> :nohlsearch<CR>
 noremap j gj
 noremap k gk
 
-noremap <silent>gn :bn<CR>
-noremap <silent>gp :bp<CR>
+noremap <silent>BN :bn<CR>
+noremap <silent>BP :bp<CR>
 
 nnoremap <C-]> g<C-]>
 
