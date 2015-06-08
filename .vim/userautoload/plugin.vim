@@ -44,3 +44,11 @@ nnoremap <silent><C-g><C-g> :Gtags -g<CR>
 nnoremap <silent><C-g><C-f> :Gtags -f %<CR>
 nnoremap <silent><C-g><C-]> :GtagsCursor<CR>
 nnoremap <silent><C-g><C-t> :GtagsRemind<CR>
+
+" quickrun
+let g:quickrun_config = {
+    \'scheme': {
+        \'command': 'guile',
+        \'exec': '%c %s:p',
+    \},
+\}
