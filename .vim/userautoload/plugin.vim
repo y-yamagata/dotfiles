@@ -49,6 +49,8 @@ nnoremap <silent><C-g><C-t> :GtagsRemind<CR>
 let g:quickrun_config = {
     \'scheme': {
         \'command': 'guile',
-        \'exec': '%c %s:p',
+    \},
+    \'st': {
+        \'command': 'gst',
     \},
 \}
