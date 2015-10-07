@@ -38,6 +38,7 @@ for f in $targets; do
     cat $target >> ~/$f
 done
 
+# vim settings
 git clone git@github.com:Shougo/neobundle.vim.git ~/.vim/bundle/neobundle.vim/
 vim -c 'NeoBundleInstall' -c q!
 
@@ -48,8 +49,16 @@ ln -s $curpath/.vim/autoload ~/.vim/autoload
 echo "ln -s ${curpath}/.vim/userautoload to ~/.vim/userautoload"
 ln -s $curpath/.vim/userautoload ~/.vim/userautoload
 
+# emacs settings
+if ! [ -d ~/emacs.d ]; then
+    mkdir ~/.emacs.d
+fi
+ln -s $curpath/.emacs.d/init.el ~/.emacs.d/init.el
+
+# git settings
 wget -O ~/.git-completion.bash --no-check-certificate https://raw.github.com/git/git/master/contrib/completion/git-completion.bash
 wget -O ~/.git-prompt.sh --no-check-certificate https://raw.github.com/git/git/master/contrib/completion/git-prompt.sh
 
+# zsh settings
 git clone git@github.com:zsh-users/zsh-completions.git ~/.zsh-completions/
 
