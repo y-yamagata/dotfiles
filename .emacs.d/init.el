@@ -1,3 +1,8 @@
+;; package admin
+(package-initialize)
+(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
+(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
+
 ;; encoding
 (set-locale-environment nil)
 (set-language-environment "Japanese")
@@ -37,8 +42,8 @@
   (scroll-bar-mode 0))
 
 ;; keybinding
-(keyboard-translate ?\C-h ?\C-?)
-(keyboard-translate ?\C-w ?\M-\d)
+(global-set-key (kbd "C-h") 'backward-delete-char)
+(global-set-key (kbd "C-w") 'backward-kill-word)
 
 ;; load path settings
 (when (< emacs-major-version 23)
