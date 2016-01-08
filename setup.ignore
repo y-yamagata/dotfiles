@@ -1,5 +1,6 @@
 README.md
 .gitmodules
+.cmdrc.bat
 setup.bash
 setup.ignore
 Custom.idekeybindings

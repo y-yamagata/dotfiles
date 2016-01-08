@@ -15,9 +15,9 @@ is_ignore() {
     return 1
 }
 
-_git=`which git 2> /dev/null`; _vim=`which vim 2> /dev/null`; _wget=`which wget 2> /dev/null`
-if [ -z "${_git}" ] || [ -z "${_vim}" ] || [ -z "${_wget}" ]; then
-    echo You must install git, vim, wget.
+_git=`which git 2> /dev/null`; _vim=`which vim 2> /dev/null`; _wget=`which wget 2> /dev/null`; _make=`which make 2> /dev/null`
+if [ -z "${_git}" ] || [ -z "${_vim}" ] || [ -z "${_wget}" ] || [ -z "${_make}" ] ; then
+    echo You must install git, vim, wget, make.
     exit 1
 fi
 
