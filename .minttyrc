@@ -2,3 +2,4 @@ BoldAsFont=no
 Transparency=medium
 ScrollbackLines=8192
 FontHeight=10
+RightClickAction=paste
