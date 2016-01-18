@@ -21,11 +21,11 @@ NeoBundle 'git@github.com:kien/ctrlp.vim.git'
 NeoBundle 'git@github.com:tomasr/molokai.git'
 NeoBundle 'git@github.com:Shougo/vimfiler.vim.git'
 NeoBundle 'git@github.com:Shougo/unite.vim.git'
-NeoBundle 'git@github.com:vim-scripts/Align.git'
+" NeoBundle 'git@github.com:vim-scripts/Align.git'
 NeoBundle 'git@github.com:thinca/vim-quickrun.git'
 NeoBundle 'git@github.com:y-yamagata/ezbuffer.vim'
 NeoBundle 'git@github.com:thinca/vim-qfreplace.git'
-NeoBundle 'git@github.com:y-yamagata/gtags.vim.git', 'master'
+" NeoBundle 'git@github.com:y-yamagata/gtags.vim.git', 'master'
 NeoBundle 'git@github.com:evidens/vim-twig.git'
 " NeoBundle 'git@github.com:vim-scripts/st.vim.git'
 " NeoBundle 'git@github.com:kannokanno/vimtest.git'
@@ -38,4 +38,3 @@ filetype plugin on
 filetype indent on
 
 runtime! userautoload/*.vim
-
