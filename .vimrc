@@ -6,11 +6,11 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 
 NeoBundleFetch 'git@github.com:Shougo/neobundle.vim.git'
 NeoBundle 'git@github.com:Shougo/vimproc.git', {
-    \ 'build' : {
-        \ 'windows' : 'make -f make_mingw32.mak',
-        \ 'cygwin' : 'make -f make_cygwin.mak',
-        \ 'mac' : 'make -f make_mac.mak',
-        \ 'unix' : 'make -f make_unix.mak',
+    \ 'build': {
+        \ 'windows': 'make -f make_mingw32.mak',
+        \ 'cygwin': 'make -f make_cygwin.mak',
+        \ 'mac': 'make -f make_mac.mak',
+        \ 'unix': 'make -f make_unix.mak',
     \ },
 \ }
 NeoBundle 'git@github.com:Shougo/neocomplcache.vim.git'
@@ -30,6 +30,13 @@ NeoBundle 'git@github.com:evidens/vim-twig.git'
 " NeoBundle 'git@github.com:vim-scripts/st.vim.git'
 " NeoBundle 'git@github.com:kannokanno/vimtest.git'
 " NeoBundle 'git@github.com:kchmck/vim-coffee-script.git'
+" NeoBundleLazy 'git@github.com:vim-scripts/javacomplete.git', {
+"     \ 'build': {
+"         \ 'cygwin': 'javac autoload/Reflection.java',
+"         \ 'mac': 'javac autoload/Reflection.java',
+"         \ 'unix': 'javac autoload/Reflection.java',
+"     \ }
+" \ }
 
 call neobundle#end()
 
