@@ -34,6 +34,9 @@ let g:ctrlp_custom_ignore = {
 " syntastic
 " let g:syntastic_enable_perl_checker = 1
 " let g:syntastic_perl_checker = 'perl'
+if isdirectory('./src/main/java')
+    let g:syntastic_java_javac_classpath = './src/main/java'
+endif
 
 " ezbuffer
 nnoremap <silent>eb :EzBuffer<CR>

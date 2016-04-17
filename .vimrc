@@ -6,11 +6,11 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 
 NeoBundleFetch 'git@github.com:Shougo/neobundle.vim.git'
 NeoBundle 'git@github.com:Shougo/vimproc.git', {
-    \ 'build' : {
-        \ 'windows' : 'make -f make_mingw32.mak',
-        \ 'cygwin' : 'make -f make_cygwin.mak',
-        \ 'mac' : 'make -f make_mac.mak',
-        \ 'unix' : 'make -f make_unix.mak',
+    \ 'build': {
+        \ 'windows': 'make -f make_mingw32.mak',
+        \ 'cygwin': 'make -f make_cygwin.mak',
+        \ 'mac': 'make -f make_mac.mak',
+        \ 'unix': 'make -f make_unix.mak',
     \ },
 \ }
 NeoBundle 'git@github.com:Shougo/neocomplcache.vim.git'
@@ -21,15 +21,22 @@ NeoBundle 'git@github.com:kien/ctrlp.vim.git'
 NeoBundle 'git@github.com:tomasr/molokai.git'
 NeoBundle 'git@github.com:Shougo/vimfiler.vim.git'
 NeoBundle 'git@github.com:Shougo/unite.vim.git'
-NeoBundle 'git@github.com:vim-scripts/Align.git'
+" NeoBundle 'git@github.com:vim-scripts/Align.git'
 NeoBundle 'git@github.com:thinca/vim-quickrun.git'
 NeoBundle 'git@github.com:y-yamagata/ezbuffer.vim'
 NeoBundle 'git@github.com:thinca/vim-qfreplace.git'
-NeoBundle 'git@github.com:y-yamagata/gtags.vim.git', 'master'
+" NeoBundle 'git@github.com:y-yamagata/gtags.vim.git', 'master'
 NeoBundle 'git@github.com:evidens/vim-twig.git'
 " NeoBundle 'git@github.com:vim-scripts/st.vim.git'
 " NeoBundle 'git@github.com:kannokanno/vimtest.git'
 " NeoBundle 'git@github.com:kchmck/vim-coffee-script.git'
+" NeoBundleLazy 'git@github.com:vim-scripts/javacomplete.git', {
+"     \ 'build': {
+"         \ 'cygwin': 'javac autoload/Reflection.java',
+"         \ 'mac': 'javac autoload/Reflection.java',
+"         \ 'unix': 'javac autoload/Reflection.java',
+"     \ }
+" \ }
 
 call neobundle#end()
 
@@ -38,4 +45,3 @@ filetype plugin on
 filetype indent on
 
 runtime! userautoload/*.vim
-
