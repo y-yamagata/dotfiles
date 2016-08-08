@@ -38,6 +38,7 @@ NeoBundle 'git@github.com:keith/swift.vim.git'
 "         \ 'unix': 'javac autoload/Reflection.java',
 "     \ }
 " \ }
+NeoBundle 'git@github.com:udalov/kotlin-vim.git'
 
 call neobundle#end()
 
