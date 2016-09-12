@@ -44,6 +44,8 @@ set cmdheight=2
 set showcmd
 set laststatus=2
 
+set nowrap
+
 colorscheme molokai
 "colorscheme desert
 
