@@ -39,6 +39,7 @@ NeoBundle 'git@github.com:keith/swift.vim.git'
 "     \ }
 " \ }
 NeoBundle 'git@github.com:udalov/kotlin-vim.git'
+NeoBundle 'git@github.com:fatih/vim-go.git'
 
 call neobundle#end()
 
