@@ -58,3 +58,6 @@ let g:quickrun_config = {
         \'command': 'gst',
     \},
 \}
+
+" vim-go
+let g:go_version_warning = 0
