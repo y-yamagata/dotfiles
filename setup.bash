@@ -49,13 +49,13 @@ function inspect {
     echo "current path: ${curpath}"
 
     echo "ignore files:"
-    echo $ignores | tr ' ' '\n' | sed 's/^/\t/'
+    echo $ignores | tr ' ' '\n' | sed 's/^/  /'
 
     echo "lock files:"
-    echo ${locks:=} | tr ' ' '\n' | sed 's/^/\t/'
+    echo ${locks:=} | tr ' ' '\n' | sed 's/^/  /'
 
     echo "target files:"
-    echo $target_files | tr ' ' '\n' | sed 's/^/\t/'
+    echo $target_files | tr ' ' '\n' | sed 's/^/  /'
 }
 
 inspect
@@ -89,7 +89,7 @@ for file in $target_files; do
     echo "cat ${filepath} >> ~/${file}"
     cat $filepath >> ~/$file
 
-    echo "${file}" >> $curpath/setup.lock
+    echo "${file}" >> $lock_file
 done
 
 # vim settings
