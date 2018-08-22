@@ -1,5 +1,6 @@
 set nobackup
 set noswapfile
+set nofoldenable
 
 set encoding=utf-8
 set fileencoding=utf-8
