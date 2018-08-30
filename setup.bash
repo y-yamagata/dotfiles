@@ -96,6 +96,8 @@ done
 git clone git@github.com:Shougo/neobundle.vim.git ~/.vim/bundle/neobundle.vim/
 vim -c 'NeoBundleInstall' -c q!
 
+echo "ln -s ${curpath}/.vim/ftdetect to ~/.vim/ftdetect"
+ln -s $curpath/.vim/ftdetect ~/.vim/ftdetect
 echo "ln -s ${curpath}/.vim/ftplugin to ~/.vim/ftplugin"
 ln -s $curpath/.vim/ftplugin ~/.vim/ftplugin
 echo "ln -s ${curpath}/.vim/autoload to ~/.vim/autoload"
