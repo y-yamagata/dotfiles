@@ -12,15 +12,14 @@ if [ -f $lock_file ]; then
     locks=`cat ${lock_file}`
 fi
 
-function in_array {
+function is_ignore {
     local needle=$1
-    local hystack=$2
 
-    if [ -z "${hystack}" ]; then
+    if [ -z "${ignores}" ]; then
         return 1
     fi
 
-    for i in $hystack; do
+    for i in $ignores; do
         if [ $i = $needle ]; then
             return 0
         fi
@@ -29,12 +28,20 @@ function in_array {
     return 1
 }
 
-function is_ignore {
-    in_array $1 $ignores
-}
-
 function is_locked {
-    in_array $1 $locks
+    local needle=$1
+
+    if [ -z "${locks}" ]; then
+        return 1
+    fi
+
+    for i in $locks; do
+        if [ $i = $needle ]; then
+            return 0
+        fi
+    done
+
+    return 1
 }
 
 _git=`which git 2> /dev/null`; _vim=`which vim 2> /dev/null`; _wget=`which wget 2> /dev/null`; _make=`which make 2> /dev/null`
@@ -52,7 +59,7 @@ function inspect {
     echo $ignores | tr ' ' '\n' | sed 's/^/  /'
 
     echo "lock files:"
-    echo ${locks:=} | tr ' ' '\n' | sed 's/^/  /'
+    echo $locks | tr ' ' '\n' | sed 's/^/  /'
 
     echo "target files:"
     echo $target_files | tr ' ' '\n' | sed 's/^/  /'
