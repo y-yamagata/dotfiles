@@ -81,7 +81,7 @@ for file in $target_files; do
         echo "Skip, that's why ${filepath} is ignored"
         continue
     fi
-    if is_lock $file; then
+    if is_locked $file; then
         echo "Skip, that's why ${filepath} is locked"
         continue
     fi
