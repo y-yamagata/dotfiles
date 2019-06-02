@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -eu
+set -u
 
 readonly curpath=$(cd $(dirname $0); pwd)
 
@@ -8,6 +8,7 @@ readonly ignore_file=$curpath/setup.ignore
 readonly lock_file=$curpath/setup.lock
 
 ignores=`cat ${ignore_file}`
+locks=
 if [ -f $lock_file ]; then
     locks=`cat ${lock_file}`
 fi
