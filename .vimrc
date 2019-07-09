@@ -48,3 +48,8 @@ filetype plugin on
 filetype indent on
 
 runtime! userautoload/*.vim
+if filereadable(getcwd() . '/.local.vim')
+    set runtimepath+=.
+
+    runtime! .local.vim
+endif

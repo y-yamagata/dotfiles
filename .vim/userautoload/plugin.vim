@@ -38,6 +38,7 @@ if isdirectory(getcwd() . '/src/main/java')
 endif
 " let g:syntastic_enable_perl_checker = 1
 " let g:syntastic_perl_checker = 'perl'
+let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 
 " ezbuffer
 nnoremap <silent>eb :EzBuffer<CR>
