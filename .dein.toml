@@ -1,0 +1,51 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'tomasr/molokai'
+
+[[plugins]]
+repo = 'y-yamagata/ezbuffer.vim'
+hook_add = '''
+    nnoremap <silent>eb :EzBuffer<CR>
+'''
+
+[[plugins]]
+repo = 'Shougo/vimfiler.vim'
+hook_add = '''
+    let g:vimfiler_as_default_explorer = 1
+    let g:vimfiler_min_cache_files = 256
+    nnoremap <silent><BS><BS> :VimFiler<CR>
+'''
+
+[[plugins]]
+repo = 'Shougo/neomru.vim'
+
+[[plugins]]
+repo = 'Shougo/unite.vim'
+depends = 'neomru.vim'
+
+[[plugins]]
+repo = 'scrooloose/syntastic'
+hook_add = '''
+    let g:syntastic_swift_checkers = ['swiftlint']
+    if isdirectory(getcwd() . '/src/main/java')
+        let g:syntastic_java_javac_classpath = getcwd() . '/src/main/java'
+    endif
+    let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
+'''
+
+# [[plugins]]
+# repo = 'Shougo/vimproc.vim'
+# hook_post_update = '''
+#     if dein#util#_is_windows()
+#         let cmd = 'tools\\update-dll-mingw'
+#     elseif dein#util#_is_cygwin()
+#         let cmd = 'make -f make_cygwin.mak'
+#     elseif executable('gmake')
+#         let cmd = 'gmake'
+#     else
+#         let cmd = 'make'
+#     endif
+#     let g:dein#plugin.build = cmd
+# '''

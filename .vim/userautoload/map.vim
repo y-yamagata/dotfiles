@@ -14,4 +14,3 @@ nnoremap <C-]> g<C-]>
 
 nnoremap <silent>"" :sp<CR><C-w>j
 nnoremap <silent>"% :vs<CR><C-w>l
-

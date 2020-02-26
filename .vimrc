@@ -1,5 +1,20 @@
+if &compatible
+    set nocompatible
+endif
+
 if has('vim_starting')
+    set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
     set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+
+if dein#load_state('~/.cache/dein')
+    call dein#begin('~/.cache/dein')
+
+    call dein#load_toml('~/.dein.toml', {'lazy': 0})
+    call dein#load_toml('~/.dein_lazy.toml', {'lazy': 1})
+
+    call dein#end()
+    call dein#save_state()
 endif
 
 call neobundle#begin(expand('~/.vim/bundle/'))
@@ -13,33 +28,6 @@ NeoBundle 'git@github.com:Shougo/vimproc.git', {
         \ 'unix': 'make -f make_unix.mak',
     \ },
 \ }
-NeoBundle 'git@github.com:Shougo/neocomplcache.vim.git'
-NeoBundle 'git@github.com:scrooloose/syntastic.git'
-NeoBundle 'git@github.com:osyo-manga/vim-over.git'
-NeoBundle 'git@github.com:LeafCage/yankround.vim.git'
-NeoBundle 'git@github.com:kien/ctrlp.vim.git'
-NeoBundle 'git@github.com:tomasr/molokai.git'
-NeoBundle 'git@github.com:Shougo/vimfiler.vim.git'
-NeoBundle 'git@github.com:Shougo/unite.vim.git'
-" NeoBundle 'git@github.com:vim-scripts/Align.git'
-NeoBundle 'git@github.com:thinca/vim-quickrun.git'
-NeoBundle 'git@github.com:y-yamagata/ezbuffer.vim'
-NeoBundle 'git@github.com:thinca/vim-qfreplace.git'
-" NeoBundle 'git@github.com:y-yamagata/gtags.vim.git', 'master'
-NeoBundle 'git@github.com:evidens/vim-twig.git'
-NeoBundle 'git@github.com:keith/swift.vim.git'
-" NeoBundle 'git@github.com:vim-scripts/st.vim.git'
-" NeoBundle 'git@github.com:kannokanno/vimtest.git'
-" NeoBundle 'git@github.com:kchmck/vim-coffee-script.git'
-" NeoBundleLazy 'git@github.com:vim-scripts/javacomplete.git', {
-"     \ 'build': {
-"         \ 'cygwin': 'javac autoload/Reflection.java',
-"         \ 'mac': 'javac autoload/Reflection.java',
-"         \ 'unix': 'javac autoload/Reflection.java',
-"     \ }
-" \ }
-NeoBundle 'git@github.com:udalov/kotlin-vim.git'
-NeoBundle 'git@github.com:fatih/vim-go.git'
 
 call neobundle#end()
 

@@ -103,6 +103,9 @@ done
 # vim settings
 git clone git@github.com:Shougo/neobundle.vim.git ~/.vim/bundle/neobundle.vim/
 vim -c 'NeoBundleInstall' -c q!
+curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
+mkdir -p ~/.cache/dein && sh ./installer.sh ~/.cache/dein && rm installer.sh
+vim -c 'call dein#install()' -c q!
 
 echo "ln -s ${curpath}/.vim/ftdetect to ~/.vim/ftdetect"
 ln -s $curpath/.vim/ftdetect ~/.vim/ftdetect
