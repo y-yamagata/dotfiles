@@ -10,7 +10,5 @@
 	st = status
 	b = branch -vv
 	ll = log --oneline
-[include]
-	path = ~/.gitconfig.local
 [credential]
 	helper = store --file ~/.git-credentials

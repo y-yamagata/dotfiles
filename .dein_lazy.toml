@@ -2,14 +2,14 @@
 repo = 'thinca/vim-qfreplace'
 on_cmd = ['Qfreplace']
 
-[[plugins]]
-repo = 'Shougo/neocomplcache.vim'
-on_i = 1
-hook_source = '''
-    let g:neocomplcache_enable_at_startup = 1
-    let g:neocomplcache_enable_smart_case = 1
-    let g:neocomplcache_dictionary_filetype_lists = {
-        \'default'  : '',
-        \'vimshell' : $HOME . '/.vimshell/command-history'
-    \}
-'''
+# [[plugins]]
+# repo = 'Shougo/neocomplcache.vim'
+# on_i = 1
+# hook_source = '''
+#     let g:neocomplcache_enable_at_startup = 1
+#     let g:neocomplcache_enable_smart_case = 1
+#     let g:neocomplcache_dictionary_filetype_lists = {
+#         \'default'  : '',
+#         \'vimshell' : $HOME . '/.vimshell/command-history'
+#     \}
+# '''
