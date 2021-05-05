@@ -3,7 +3,7 @@ if exists('b:did_ftplugin')
 endif
 let b:did_ftplugin = 1
 
-setlocal tabstop=2
+setlocal tabstop=4
 setlocal expandtab
-setlocal softtabstop=2
-setlocal shiftwidth=2
+setlocal softtabstop=4
+setlocal shiftwidth=4
