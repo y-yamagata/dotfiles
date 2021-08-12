@@ -1,7 +1,7 @@
 
-autoload -Uz colors; colors
+autoload -Uz colors && colors
 
-autoload -U compinit; compinit
+autoload -Uz compinit && compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 fpath=(~/.zsh-completions/src $fpath)
 
@@ -22,16 +22,21 @@ RPROMPT='%F{cyan}%~%f'
 
 setopt print_eight_bit
 setopt no_beep
+setopt nolistbeep
 setopt interactive_comments
 setopt auto_cd
 setopt auto_pushd
 setopt correct
 setopt extended_glob
+setopt hist_ignore_dups
 setopt hist_ignore_all_dups
+setopt hist_ignore_space
+setopt hist_reduce_blanks
+setopt share_history
 
 WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 
-alias ls='ls -G --color'
+alias ls='ls -G'
 alias ll='ls -l -h'
 alias la='ls -a'
 alias l1='ls -1'
