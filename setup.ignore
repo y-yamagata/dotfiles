@@ -3,6 +3,13 @@ README.md
 .gitignore
 .gitmodules
 .cmdrc.bat
+.vimrc
+common.sh
+vim.sh
+neovim.sh
+emacs.sh
 setup.bash
+setup.zsh
 setup.ignore
+setup.lock
 Custom.idekeybindings

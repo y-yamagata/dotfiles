@@ -1,69 +1,46 @@
 #!/usr/bin/env bash
 
-set -u
+# set -e
 
-readonly curpath=$(cd $(dirname $0); pwd)
+. $(dirname $0)/common.sh
 
-readonly ignore_file=$curpath/setup.ignore
-readonly lock_file=$curpath/setup.lock
-
-ignores=`cat ${ignore_file}`
-locks=
-if [ -f $lock_file ]; then
-    locks=`cat ${lock_file}`
-fi
-
-function is_ignore {
-    local needle=$1
-
-    if [ -z "${ignores}" ]; then
-        return 1
-    fi
-
-    for i in $ignores; do
-        if [ $i = $needle ]; then
-            return 0
-        fi
-    done
-
-    return 1
-}
-
-function is_locked {
-    local needle=$1
-
-    if [ -z "${locks}" ]; then
-        return 1
-    fi
-
-    for i in $locks; do
-        if [ $i = $needle ]; then
-            return 0
-        fi
-    done
-
-    return 1
-}
-
-_git=`which git 2> /dev/null`; _vim=`which vim 2> /dev/null`; _wget=`which wget 2> /dev/null`; _make=`which make 2> /dev/null`
-if [ -z "${_git}" ] || [ -z "${_vim}" ] || [ -z "${_wget}" ] || [ -z "${_make}" ] ; then
-    echo You must install git, vim, wget, make. >&2
+_wget=`which wget 2> /dev/null`
+if [ -z "${_wget}" ]; then
+    echo "You must install wget" >&2
     exit 1
 fi
 
-target_files=`find . -maxdepth 1 -name '\.*' | grep -vE '^$' | grep -vE '^\.+$' | sed -e 's/^\.*\/\(.*\)/\1/g'`
+parse-option $@
+
+target_files=$(find . -type f -maxdepth 1 -name '\.*' | grep -vE '^$' | grep -vE '^\.+$' | grep -v '.zshrc' | sed -e 's/^\.*\/\(.*\)/\1/g')
 
 function inspect {
     echo "current path: ${curpath}"
+    echo ;
 
     echo "ignore files:"
     echo $ignores | tr ' ' '\n' | sed 's/^/  /'
+    echo ;
 
     echo "lock files:"
     echo $locks | tr ' ' '\n' | sed 's/^/  /'
+    echo ;
 
     echo "target files:"
     echo $target_files | tr ' ' '\n' | sed 's/^/  /'
+    echo ;
+
+    echo "actual target files:"
+    for file in $target_files; do
+        if ignore? $file; then
+            continue
+        fi
+        if locked? $file; then
+            continue
+        fi
+        echo "  ${file}"
+    done
+    echo ;
 }
 
 inspect
@@ -81,53 +58,37 @@ echo "O.K. Transfer process to install"
 for file in $target_files; do
     filepath=$curpath/$file
 
-    if [ -d $filepath ]; then
-        echo "Skip, that's why ${filepath} is directory"
-        continue
-    fi
-    if is_ignore $file; then
+    if ignore? $file; then
         echo "Skip, that's why ${filepath} is ignored"
         continue
     fi
-    if is_locked $file; then
+    if locked? $file; then
         echo "Skip, that's why ${filepath} is locked"
         continue
     fi
 
-    echo "cat ${filepath} >> ~/${file}"
-    cat $filepath >> ~/$file
+    if [ $file = ".bashrc" ]; then
+        echo "cat ${filepath} >> ~/${file}"
+        cat $filepath >> ~/$file
+    else
+        cp -i $filepath ~/$file
+    fi
 
     echo "${file}" >> $lock_file
 done
 
-# vim settings
-git clone git@github.com:Shougo/neobundle.vim.git ~/.vim/bundle/neobundle.vim/
-vim -c 'NeoBundleInstall' -c q!
-curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
-mkdir -p ~/.cache/dein && sh ./installer.sh ~/.cache/dein && rm installer.sh
-vim -c 'call dein#install()' -c q!
-vim -c 'CocInstall coc-json' -c q!
-
-echo "ln -s ${curpath}/.vim/ftdetect to ~/.vim/ftdetect"
-ln -s $curpath/.vim/ftdetect ~/.vim/ftdetect
-echo "ln -s ${curpath}/.vim/ftplugin to ~/.vim/ftplugin"
-ln -s $curpath/.vim/ftplugin ~/.vim/ftplugin
-echo "ln -s ${curpath}/.vim/autoload to ~/.vim/autoload"
-ln -s $curpath/.vim/autoload ~/.vim/autoload
-echo "ln -s ${curpath}/.vim/userautoload to ~/.vim/userautoload"
-ln -s $curpath/.vim/userautoload ~/.vim/userautoload
-
-# emacs settings
-if ! [ -d ~/emacs.d ]; then
-    mkdir ~/.emacs.d
+if "$withvim"; then
+    . $curpath/vim.sh
 fi
-ln -s $curpath/.emacs.d/init.el ~/.emacs.d/init.el
+if "$withneovim"; then
+    . $curpath/neovim.sh
+fi
+if "$withemacs"; then
+    . $curpath/emacs.sh
+fi
 
 # git settings
-wget -O ~/.git-completion.bash --no-check-certificate https://raw.github.com/git/git/master/contrib/completion/git-completion.bash
-wget -O ~/.git-prompt.sh --no-check-certificate https://raw.github.com/git/git/master/contrib/completion/git-prompt.sh
+# wget -O ~/.git-completion.bash --no-check-certificate https://raw.github.com/git/git/master/contrib/completion/git-completion.bash
+# wget -O ~/.git-prompt.sh --no-check-certificate https://raw.github.com/git/git/master/contrib/completion/git-prompt.sh
 
-# zsh settings
-git clone git@github.com:zsh-users/zsh-completions.git ~/.zsh-completions/
-
-source ~/.bashrc
+# source ~/.bashrc
