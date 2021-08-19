@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# set -e
+# set -eu
 
 . $(dirname $0)/common.sh
 
@@ -88,7 +88,7 @@ if "$withemacs"; then
 fi
 
 # git settings
-# wget -O ~/.git-completion.bash --no-check-certificate https://raw.github.com/git/git/master/contrib/completion/git-completion.bash
-# wget -O ~/.git-prompt.sh --no-check-certificate https://raw.github.com/git/git/master/contrib/completion/git-prompt.sh
+$_wget -O ~/.git-completion.bash --no-check-certificate https://raw.github.com/git/git/master/contrib/completion/git-completion.bash
+$_wget -O ~/.git-prompt.sh --no-check-certificate https://raw.github.com/git/git/master/contrib/completion/git-prompt.sh
 
-# source ~/.bashrc
+source ~/.bashrc

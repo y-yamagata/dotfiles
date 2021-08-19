@@ -1,4 +1,4 @@
-_git=`which git 2> /dev/null`; _vim=`which vim 2> /dev/null`; _make=`which make 2> /dev/null`
+_git=$(which git 2> /dev/null); _vim=$(which vim 2> /dev/null); _make=$(which make 2> /dev/null)
 if [ -z "${_git}" ] || [ -z "${_vim}" ] || [ -z "${_make}" ]; then
     echo "You must install git, vim, make" >&2
 else
@@ -12,7 +12,6 @@ else
         curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > /tmp/installer.sh
         mkdir -p ~/.cache/dein && sh /tmp/installer.sh ~/.cache/dein && rm /tmp/installer.sh
         $_vim -c 'call dein#install()' -c q!
-        # vim -c 'CocInstall coc-json' -c q!
     fi
 
     cp -i ${curpath}/.vim/dein.toml ~/.vim

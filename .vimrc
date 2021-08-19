@@ -10,8 +10,8 @@ endif
 if dein#load_state('~/.cache/dein')
     call dein#begin('~/.cache/dein')
 
-    call dein#load_toml('~/.dein.toml', {'lazy': 0})
-    call dein#load_toml('~/.dein_lazy.toml', {'lazy': 1})
+    call dein#load_toml('~/.vim/dein.toml', {'lazy': 0})
+    call dein#load_toml('~/.vim/dein_lazy.toml', {'lazy': 1})
 
     call dein#end()
     call dein#save_state()
