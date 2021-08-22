@@ -3,6 +3,9 @@ if [ -z "${_git}" ] || [ -z "${_vim}" ] || [ -z "${_make}" ]; then
     echo "You must install git, vim, make" >&2
 else
     cp -i ${curpath}/.vimrc ~/.vimrc
+    cp -i ${curpath}/.vim/dein.toml ~/.vim
+    cp -i ${curpath}/.vim/dein_lazy.toml ~/.vim
+    cp -i ${curpath}/.vim/coc-settings.json ~/.vim
 
     if [ ! -d ~/.vim/bundle/neobundle.vim/ ]; then
         $_git clone git@github.com:Shougo/neobundle.vim.git ~/.vim/bundle/neobundle.vim/
@@ -14,9 +17,6 @@ else
         $_vim -c 'call dein#install()' -c q!
     fi
 
-    cp -i ${curpath}/.vim/dein.toml ~/.vim
-    cp -i ${curpath}/.vim/dein_lazy.toml ~/.vim
-    cp -i ${curpath}/.vim/coc-settings.json ~/.vim
     if [ ! -d ~/.vim/ftdetect ]; then
         mkdir ~/.vim/ftdetect
     fi

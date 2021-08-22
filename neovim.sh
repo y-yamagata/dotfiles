@@ -7,6 +7,9 @@ else
     fi
 
     cp -i ${curpath}/.config/nvim/init.vim ~/.config/nvim
+    cp -i ${curpath}/.config/nvim/dein.toml ~/.config/nvim
+    cp -i ${curpath}/.config/nvim/dein_lazy.toml ~/.config/nvim
+    cp -i ${curpath}/.config/nvim/coc-settings.json ~/.config/nvim
 
     if [ ! -d ~/.cache/dein ]; then
         curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > /tmp/installer.sh
@@ -15,9 +18,6 @@ else
         $_nvim -c 'CocInstall coc-json' -c q!
     fi
 
-    cp -i ${curpath}/.config/nvim/dein.toml ~/.config/nvim
-    cp -i ${curpath}/.config/nvim/dein_lazy.toml ~/.config/nvim
-    cp -i ${curpath}/.config/nvim/coc-settings.json ~/.config/nvim
     if [ ! -d ~/.config/nvim/autoload ]; then
         mkdir ~/.config/nvim/autoload
     fi

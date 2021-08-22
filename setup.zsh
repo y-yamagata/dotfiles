@@ -1,9 +1,11 @@
 #!/usr/bin/env zsh
-#
+
+setopt SH_WORD_SPLIT
+
 . $(dirname $0)/common.sh
 
 _git=$(which git 2> /dev/null)
-if [ -z "${_git}" ]; then
+if [ "$?" = "1" ]; then
     echo "You must install git" >&2
     exit 1
 fi
@@ -43,7 +45,7 @@ function inspect {
 
 inspect
 
-read -p "Do you install this settings?[y/n]" yn
+read "yn?Do you install this settings?[y/n]"
 
 case $yn in
     [Yy]* )
@@ -86,6 +88,8 @@ if "$withemacs"; then
 fi
 
 # zsh settings
-git clone git@github.com:zsh-users/zsh-completions.git ~/.zsh-completions/
+if [ ! -d ~/.zsh-completions/ ]; then
+    git clone git@github.com:zsh-users/zsh-completions.git ~/.zsh-completions/
+fi
 
 source ~/.zshrc
