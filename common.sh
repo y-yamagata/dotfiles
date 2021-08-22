@@ -9,7 +9,7 @@ if [ -f $lock_file ]; then
     locks=`cat ${lock_file}`
 fi
 
-function ignore? {
+function is-ignore {
     local needle=$1
 
     if [ -z "${ignores}" ]; then
@@ -25,7 +25,7 @@ function ignore? {
     return 1
 }
 
-function locked? {
+function is-locked {
     local needle=$1
 
     if [ -z "${locks}" ]; then

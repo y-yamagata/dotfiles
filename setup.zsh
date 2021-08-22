@@ -30,10 +30,10 @@ function inspect {
 
     echo "actual target files:"
     for file in $target_files; do
-        if ignore? $file; then
+        if is-ignore $file; then
             continue
         fi
-        if locked? $file; then
+        if is-locked $file; then
             continue
         fi
         echo "  ${file}"
@@ -56,11 +56,11 @@ echo "O.K. Transfer process to install"
 for file in $target_files; do
     filepath=$curpath/$file
 
-    if ignore? $file; then
+    if is-ignore $file; then
         echo "Skip, that's why ${filepath} is ignored"
         continue
     fi
-    if locked? $file; then
+    if is-locked $file; then
         echo "Skip, that's why ${filepath} is locked"
         continue
     fi
