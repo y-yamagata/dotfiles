@@ -5,7 +5,7 @@ setopt SH_WORD_SPLIT
 . $(dirname $0)/common.sh
 
 _git=$(which git 2> /dev/null)
-if [ "$?" = "1" ]; then
+if [ -z "$_git" ] || [ $_git =~ "not found" ]; then
     echo "You must install git" >&2
     exit 1
 fi
