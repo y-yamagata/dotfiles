@@ -28,6 +28,20 @@ repo = 'Shougo/neomru.vim'
 [[plugins]]
 repo = 'Shougo/unite.vim'
 depends = 'neomru.vim'
+hook_add = '''
+    let g:unite_enable_start_insert = 1
+    let g:unite_source_file_mru_limit = 50
+    let g:unite_source_file_mru_filename_format = ''
+    nnoremap [unite] <Nop>
+    nmap <Space>u [unite]
+    nnoremap <silent> [unite]b :<C-u>Unite -winheight=15 buffer<CR>
+    nnoremap <silent> [unite]r :<C-u>Unite -winheight=15 -buffer-name=register register<CR>
+    nnoremap <silent> [unite]m :<C-u>Unite -winheight=15 file_mru<CR>
+    autocmd FileType unite call s:unite_my_settings()
+    function! s:unite_my_settings() abort
+        nmap <buffer> <ESC> <Plug>(unite_exit)
+    endfunction
+'''
 
 [[plugins]]
 repo = 'Quramy/tsuquyomi'
