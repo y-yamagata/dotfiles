@@ -2,7 +2,8 @@ noremap * *N
 noremap # #N
 noremap n nzz
 noremap N Nzz
-noremap <silent><Esc><Esc> :nohlsearch<CR>
+" noremap <silent><Esc><Esc> :nohlsearch<CR>
+noremap <silent><C-l> :<C-u>nohlsearch<CR><C-l>
 
 noremap j gj
 noremap k gk
