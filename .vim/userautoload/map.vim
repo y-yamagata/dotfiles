@@ -15,3 +15,12 @@ nnoremap <C-]> g<C-]>
 
 nnoremap <silent>"" :sp<CR><C-w>j
 nnoremap <silent>"% :vs<CR><C-w>l
+
+nnoremap yy "ayy
+nnoremap dd "add
+vnoremap y "ay
+vnoremap x "ax
+nnoremap p "ap
+nnoremap P "aP
+vnoremap p "ap
+vnoremap P "aP

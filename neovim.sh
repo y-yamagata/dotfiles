@@ -26,4 +26,6 @@ else
         mkdir ~/.config/nvim/userautoload
     fi
     cp -i ${curpath}/.config/nvim/userautoload/* ~/.config/nvim/userautoload
+
+    echo 'set clipboard+=unnamed' >> ~/.vimrc
 fi
