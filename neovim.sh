@@ -1,5 +1,5 @@
 _nvim=$(which nvim 2> /dev/null); _node=$(which node 2> /dev/null); _git=$(which git 2> /dev/null)
-if [ -z "${_nvim}" ] || [ $_nvim =~ "not found" ] || [ -z "${_node}" ] || [ $_node =~ "not found" ] || [ -z "${_git}" ] || [ $_git =~ "not found" ]; then
+if [ -z "${_nvim}" ] || [[ $_nvim =~ "not found" ]] || [ -z "${_node}" ] || [[ $_node =~ "not found" ]] || [ -z "${_git}" ] || [[ $_git =~ "not found" ]]; then
     echo "You must install nvim, node, git" >&2
 else
     if [ ! -d ~/.config/nvim ]; then

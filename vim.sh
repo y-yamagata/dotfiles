@@ -1,5 +1,5 @@
 _git=$(which git 2> /dev/null); _vim=$(which vim 2> /dev/null); _make=$(which make 2> /dev/null)
-if [ -z "${_git}" ] || [ $_git =~ "not found" ] || [ -z "${_vim}" ] || [ $_vim =~ "not found" ] || [ -z "${_make}" ] || [ $_make =~ "not found" ]; then
+if [ -z "${_git}" ] || [[ $_git =~ "not found" ]] || [ -z "${_vim}" ] || [[ $_vim =~ "not found" ]] || [ -z "${_make}" ] || [[ $_make =~ "not found" ]]; then
     echo "You must install git, vim, make" >&2
 else
     cp -i ${curpath}/.vimrc ~/.vimrc

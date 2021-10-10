@@ -1,6 +1,6 @@
 [core]
-	editor = vim
-    # editor = nvim
+    # editor = vim
+	editor = nvim
 	pager = less -r
 	excludesfile = ~/.gitignore
 [color]
@@ -13,3 +13,6 @@
 	ll = log --oneline
 [credential]
 	helper = store --file ~/.git-credentials
+[user]
+	name = y-yamagata
+	email = bus.yuji.yamagata@gmail.com
