@@ -11,6 +11,7 @@
 	st = status
 	b = branch -vv
 	ll = log --oneline
+    ll = log --pretty=formst:'%ai %h %s'
 [credential]
 	helper = store --file ~/.git-credentials
 [user]
