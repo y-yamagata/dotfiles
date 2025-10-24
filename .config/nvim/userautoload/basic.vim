@@ -5,7 +5,6 @@ set nofoldenable
 set encoding=utf-8
 set fileencoding=utf-8
 set fileformat=unix
-set termencoding=utf-8
 
 set hidden
 
@@ -47,11 +46,25 @@ set laststatus=2
 
 set nowrap
 
-colorscheme molokai
-"colorscheme desert
+" colorscheme molokai
+colorscheme desert
 
 augroup InvisibleIndicator
     autocmd!
     autocmd BufEnter * call userautoload#activateInvisibleIndicator()
 augroup END
 
+set clipboard+=unnamed
+set mouse=
+
+augroup VimrcLocal
+    autocmd!
+    autocmd BufNewFile,BufReadPost * call s:vimrc_local(expand('<afile>:p:h'))
+augroup END
+
+function! s:vimrc_local(loc)
+    let files = findfile('.vimrc.local', escape(a:loc, ' ') . ';', -1)
+    for i in reverse(filter(files, 'filereadable(v:val)'))
+        source `=i`
+    endfor
+endfunction

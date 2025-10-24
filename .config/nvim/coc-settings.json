@@ -1,4 +1,9 @@
 {
     "suggest.noselect": true,
-    "suggest.preferCompleteThanJumpPlaceholder": true
+    "suggest.preferCompleteThanJumpPlaceholder": true,
+    "clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/12.0.1/clangd_12.0.1/bin/clangd",
+    "intelephense.environment.phpVersion": "8.3.0",
+    "javascript.suggestionActions.enabled": false,
+    "javascript.autoClosingTags": false,
+    "typescript.autoClosingTags": false
 }

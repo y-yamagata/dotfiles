@@ -3,6 +3,7 @@
 	editor = nvim
 	pager = less -r
 	excludesfile = ~/.gitignore
+	ignorecase = false
 [color]
 	ui = auto
 [alias]
@@ -11,7 +12,7 @@
 	st = status
 	b = branch -vv
 	ll = log --oneline
-    ll = log --pretty=formst:'%ai %h %s'
+	llp = log --pretty=formst:'%ai %h %s'
 [credential]
 	helper = store --file ~/.git-credentials
 [user]
